@@ -1,6 +1,6 @@
+import { RegisterUserDto, UserRto } from './../../../../common/user/dtos/user.dto';
 import { Body, Controller, Get, Post } from '@nestjs/common';
 import { UsersService } from './users.service';
-import { RegisterUserDto, UserRto } from '../../../common/user.dto';
 import { ApiTags, ApiResponse } from '@nestjs/swagger';
 import { ValidateNested } from 'class-validator';
 

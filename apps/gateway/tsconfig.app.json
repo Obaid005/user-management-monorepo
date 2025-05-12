@@ -1,0 +1,14 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../../dist/apps/gateway",
+    "baseUrl": "./",
+    "paths": {
+      "@common/*": ["../../common/*"],
+      "@core/*": ["../../core/*"],
+      "@config/*": ["../../config/*"]
+    }
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist", "test", "**/*.spec.ts"]
+}

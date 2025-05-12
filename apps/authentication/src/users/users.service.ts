@@ -1,12 +1,12 @@
 import { Injectable } from '@nestjs/common';
-import { RegisterUserDto, UserRto } from '../../../../common/user.dto';
+import { RegisterUserDto, UserRto } from '../../../../common/user/dtos/user.dto';
 import { UsersRepository } from './users.repository';
 
 @Injectable()
 export class UsersService {
   constructor(private readonly usersRepository: UsersRepository) {}
 
-  async registerUser(dto: RegisterUserDto): Promise<UserRto> {
+  async registerUser(dto: RegisterUserDto): Promise<Partial<UserRto>> {
     const user = {
       email: dto.email,
       name: dto.name,
@@ -17,7 +17,7 @@ export class UsersService {
     return userRto;
   }
 
-  async getAllUsers(): Promise<UserRto[]> {
+  async getAllUsers(): Promise<Partial<UserRto>[]> {
     const users = await this.usersRepository.findAll();
     return users.map(({ password, ...userRto }) => userRto);
   }

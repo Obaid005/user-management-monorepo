@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { NetworkingService } from './networking.service';
-import { RegisterUserDto, UserRto } from '../../../../common/user.dto';
+import { RegisterUserDto, UserRto } from '../../../../common/user/dtos/user.dto';
 @Injectable()
 export class UsersService {
   constructor(private readonly networkingService: NetworkingService) {}
