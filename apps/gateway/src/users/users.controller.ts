@@ -1,4 +1,4 @@
-import { RegisterUserDto, UserRto } from './../../../../common/user/dtos/user.dto';
+import { RegisterUserDto, UserRto } from '@monorepo/common';
 import { Body, Controller, Get, Post } from '@nestjs/common';
 import { UsersService } from './users.service';
 import { ApiTags, ApiResponse } from '@nestjs/swagger';
@@ -7,7 +7,7 @@ import { ValidateNested } from 'class-validator';
 @ApiTags('auth')
 @Controller('auth')
 export class UsersController {
-  constructor(private readonly usersService: UsersService) {}
+  constructor(private readonly usersService: UsersService) { }
 
   @Post('register')
   @ApiResponse({ status: 201, type: UserRto })

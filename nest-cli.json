@@ -23,6 +23,15 @@
       "compilerOptions": {
         "tsConfigPath": "apps/authentication/tsconfig.app.json"
       }
+    },
+    "common": {
+      "type": "library",
+      "root": "common",
+      "entryFile": "index",
+      "sourceRoot": "common",
+      "compilerOptions": {
+        "tsConfigPath": "common/tsconfig.json"
+      }
     }
   }
 }

@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { NetworkingService } from './networking.service';
-import { RegisterUserDto, UserRto } from '../../../../common/user/dtos/user.dto';
+import { RegisterUserDto, UserRto } from '@monorepo/common';
+
 @Injectable()
 export class UsersService {
   constructor(private readonly networkingService: NetworkingService) {}
@@ -11,7 +12,7 @@ export class UsersService {
       .toPromise();
   }
 
-  async getAllUsers(): Promise<UserRto[]> {
+async getAllUsers(): Promise<UserRto[]> {
     return this.networkingService
       .send({ cmd: 'get-all-users' }, {})
       .toPromise();

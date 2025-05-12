@@ -10,7 +10,7 @@
     "config"
   ],
   "scripts": {
-    "build": "nest build --projects gateway,authentication",
+    "build": "nest build common && nest build gateway && nest build authentication",
     "format": "prettier --write \"**/*.ts\"",
     "start:gateway": "nest start gateway",
     "start:auth": "nest start authentication",
