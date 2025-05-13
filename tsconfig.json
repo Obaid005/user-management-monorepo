@@ -5,7 +5,10 @@
   "compilerOptions": {
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "target": "ES5"
+    "target": "ES5",
+    "paths": {
+      "@monorepo/common": ["./common/src"]
+    }
   },
   "projects": {
     "gateway": {

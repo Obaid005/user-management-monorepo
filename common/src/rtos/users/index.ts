@@ -1,4 +1,4 @@
-import { IUser } from "@monorepo/common";
+import { IUser } from "../../schemas/user.schema";
 
 /**
  * User response transfer object

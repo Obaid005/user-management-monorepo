@@ -4,9 +4,7 @@
     "outDir": "../../dist/apps/authentication",
     "baseUrl": "./",
     "paths": {
-      "@common/*": ["../../common/*"],
-      "@core/*": ["../../core/*"],
-      "@config/*": ["../../config/*"]
+      "@monorepo/common": ["../../common/src"]
     }
   },
   "include": ["src/**/*"],

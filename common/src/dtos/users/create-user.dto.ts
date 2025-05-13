@@ -1,7 +1,7 @@
 import { IsNotEmpty, MinLength } from "class-validator";
 
 import { IsEmail } from "class-validator";
-import { IUser } from "@monorepo/common";
+import { IUser } from "../../schemas/user.schema";
 
 /**
  * Data transfer object for user registration

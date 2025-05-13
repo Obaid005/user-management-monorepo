@@ -28,7 +28,7 @@
       "type": "library",
       "root": "common",
       "entryFile": "index",
-      "sourceRoot": "common",
+      "sourceRoot": "common/src",
       "compilerOptions": {
         "tsConfigPath": "common/tsconfig.json"
       }
