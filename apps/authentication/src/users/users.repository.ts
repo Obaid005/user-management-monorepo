@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-import { Model } from 'mongoose';
-import { User, IUser, UserDocument } from '@monorepo/common';
+import { Model, Types } from 'mongoose';
+import { User, IUser, UserDocument, UpdateUserDto } from '@monorepo/common';
 
 @Injectable()
 export class UsersRepository {
@@ -35,5 +35,17 @@ export class UsersRepository {
    */
   async findByEmail(email: string): Promise<UserDocument> {
     return this.userModel.findOne({ email }).exec();
+  }
+
+  async findById(id: Types.ObjectId): Promise<UserDocument> {
+    return this.userModel.findById(id).exec();
+  }
+
+  async delete(id: Types.ObjectId): Promise<UserDocument> {
+    return this.userModel.findByIdAndDelete(id).exec();
+  }
+
+  async update(id: Types.ObjectId, dto: UpdateUserDto): Promise<UserDocument> {
+    return this.userModel.findByIdAndUpdate(id, dto, { new: true }).exec();
   }
 }

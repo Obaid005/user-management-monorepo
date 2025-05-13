@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
-import { RegisterUserDto, UserDocument, UserRto, IUser } from '@monorepo/common';
+import { RegisterUserDto, UserDocument, UserRto, IUser, UpdateUserDto } from '@monorepo/common';
 import { UsersRepository } from './users.repository';
+import { Types } from 'mongoose';
 
 @Injectable()
 export class UsersService {
@@ -35,5 +36,38 @@ export class UsersService {
       createdAt: user.createdAt,
       updatedAt: user.updatedAt
     }));
+  }
+
+  async getUserById(id: Types.ObjectId): Promise<UserRto> {
+    const user = await this.usersRepository.findById(id);
+    return {
+      _id: user._id.toString(),
+      email: user.email,
+      name: user.name,
+      createdAt: user.createdAt,
+      updatedAt: user.updatedAt
+    };
+  }
+
+  async deleteUserById(id: Types.ObjectId): Promise<UserRto> {
+    const deletedUser = await this.usersRepository.delete(id);
+    return {
+      _id: deletedUser._id.toString(),
+      email: deletedUser.email,
+      name: deletedUser.name,
+      createdAt: deletedUser.createdAt,
+      updatedAt: deletedUser.updatedAt
+    };
+  }
+
+  async updateUserById(id: Types.ObjectId, dto: UpdateUserDto): Promise<UserRto> {
+    const updatedUser = await this.usersRepository.update(id, dto);
+    return {
+      _id: updatedUser._id.toString(),
+      email: updatedUser.email,
+      name: updatedUser.name,
+      createdAt: updatedUser.createdAt,
+      updatedAt: updatedUser.updatedAt
+    };
   }
 }
