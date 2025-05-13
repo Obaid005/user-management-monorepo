@@ -1,7 +1,9 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "outDir": "../../dist/apps/authentication",
+    "outDir": "../../dist/out-tsc",
+    "module": "commonjs",
+    "types": ["jest", "node"],
     "baseUrl": "./",
     "paths": {
       "@common/*": ["../../common/*"],
@@ -9,6 +11,10 @@
       "@config/*": ["../../config/*"]
     }
   },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules", "dist", "test"]
-}
+  "include": [
+    "jest.config.ts",
+    "src/**/*.spec.ts",
+    "src/**/*.d.ts",
+    "test/**/*.ts"
+  ]
+} 

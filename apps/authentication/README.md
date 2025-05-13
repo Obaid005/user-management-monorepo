@@ -44,18 +44,46 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-## Run tests
+## Test Coverage
+
+This authentication microservice has comprehensive test coverage including:
+
+1. **Unit Tests**: Testing individual components in isolation
+   - Service layer tests
+   - Controller layer tests
+   - Repository layer tests
+   - DTO validation tests
+
+2. **Integration Tests**: Testing the interaction between multiple components
+   - Module configuration tests
+
+3. **End-to-End Tests**: Testing the complete flow from client to server and back
+
+### Running Tests
+
+To run all tests:
 
 ```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+npm test
 ```
+
+To run tests with coverage report:
+
+```bash
+npm run test:cov
+```
+
+To run end-to-end tests:
+
+```bash
+npm run test:e2e
+```
+
+### Test Structure
+
+- Unit tests are co-located with their implementation files (e.g., `users.service.spec.ts`)
+- E2E tests are located in the `test` directory
+- DTO validation tests are in `dto-validation.spec.ts`
 
 ## Deployment
 

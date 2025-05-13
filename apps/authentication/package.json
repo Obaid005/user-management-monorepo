@@ -24,6 +24,11 @@
     "mongoose": "^8.14.2",
     "uuid": "^11.1.0"
   },
+  "devDependencies": {
+    "mongodb-memory-server": "^9.1.6",
+    "class-validator": "^0.14.1",
+    "class-transformer": "^0.5.1"
+  },
   "jest": {
     "moduleFileExtensions": [
       "js",
