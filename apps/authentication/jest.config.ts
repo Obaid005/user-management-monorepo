@@ -9,6 +9,7 @@ module.exports = {
   moduleFileExtensions: ['ts', 'js', 'html'],
   coverageDirectory: '../../coverage/apps/authentication',
   moduleNameMapper: {
-    '^@monorepo/common(.*)$': '<rootDir>/../../libs/common/src$1',
+    '^@monorepo/common$': '<rootDir>/../../common/src',
+    '^@monorepo/common/(.*)$': '<rootDir>/../../common/src/$1',
   },
 }; 

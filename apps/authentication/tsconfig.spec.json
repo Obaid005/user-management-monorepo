@@ -6,9 +6,7 @@
     "types": ["jest", "node"],
     "baseUrl": "./",
     "paths": {
-      "@common/*": ["../../common/*"],
-      "@core/*": ["../../core/*"],
-      "@config/*": ["../../config/*"]
+      "@monorepo/common": ["../../common/src"]
     }
   },
   "include": [
@@ -17,4 +15,4 @@
     "src/**/*.d.ts",
     "test/**/*.ts"
   ]
-} 
+}
